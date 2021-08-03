@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+        <data>
+            <variable
+                name="adapter"
+                type="com.makhabatusen.quizapp.ui.questions_fragment.recycler.QuestionsAdapter" />
+        </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vert_left"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vert_right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8" />
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/iv_back_press"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back_press"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/tv_quiz_theme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            tools:text="@string/geography" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progress_quiz_questions"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:max="10"
+        android:progress="5"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_right"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_left"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+        <TextView
+            android:id="@+id/tv_quest_amount_current"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/five"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/recycler_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/progress_quiz_questions" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_quest_amount_current"
+            android:layout_marginTop="20dp"
+            tools:listitem="@layout/item_answer_options" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

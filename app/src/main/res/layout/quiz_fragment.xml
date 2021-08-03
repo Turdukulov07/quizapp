@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".ui.quiz_fragment.QuizFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_first"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.14" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vert_left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="80dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vert_left_two"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.22" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vert_right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.82" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vert_right_two"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.78" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/quiz"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_quiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/ignore"
+        android:src="@drawable/ic_quiz"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/guideline_first" />
+
+    <Space
+        android:id="@+id/space_1"
+        style="@style/space_style"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_quiz" />
+
+    <TextView
+        android:id="@+id/tv_questions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/questions_amount"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_questions_amount"
+        app:layout_constraintEnd_toStartOf="@+id/tv_questions_amount"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_left_two"
+        app:layout_constraintTop_toBottomOf="@id/space_1" />
+
+    <TextView
+        android:id="@+id/tv_questions_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ten"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tv_questions"
+        app:layout_constraintTop_toBottomOf="@id/space_1" />
+
+    <SeekBar
+        android:id="@+id/seekbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:max="20"
+        android:progress="10"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_right"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_left"
+        app:layout_constraintTop_toBottomOf="@id/tv_questions" />
+
+    <Space
+        android:id="@+id/space_2"
+        style="@style/space_style"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seekbar" />
+
+    <TextView
+        android:id="@+id/tv_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/category"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_left_two"
+        app:layout_constraintTop_toBottomOf="@id/space_2" />
+
+    <Spinner
+        android:id="@+id/spinner_category"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_right_two"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_left_two"
+        app:layout_constraintTop_toBottomOf="@id/tv_category" />
+
+    <Space
+        android:id="@+id/space_3"
+        style="@style/space_style"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner_category" />
+
+    <TextView
+        android:id="@+id/tv_difficulty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/difficulty"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_left_two"
+        app:layout_constraintTop_toBottomOf="@id/space_3" />
+
+    <Spinner
+        android:id="@+id/spinner_difficulty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:entries="@array/difficulty"
+        app:layout_constraintEnd_toEndOf="@id/guideline_vert_right_two"
+        app:layout_constraintStart_toStartOf="@id/guideline_vert_left_two"
+        app:layout_constraintTop_toBottomOf="@id/tv_difficulty" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/blue"
+        android:text="@string/start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner_difficulty" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

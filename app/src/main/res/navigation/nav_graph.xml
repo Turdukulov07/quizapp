@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="com.example.quizapp.ui.quiz_fragment.QuizFragment"
+        android:label="explore_fragment"
+        tools:layout="@layout/quiz_fragment" />
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.quizapp.ui.history_fragment.HistoryFragment"
+        android:label="history_fragment"
+        tools:layout="@layout/history_fragment" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.quizapp.ui.settings_fragment.SettingsFragment"
+        android:label="settings_fragment"
+        tools:layout="@layout/settings_fragment" />
+    <fragment
+        android:id="@+id/questionsFragment"
+        android:name="com.example.quizapp.ui.questions_fragment.QuestionsFragment"
+        android:label="QuestionsFragment" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.quizapp.ui.main_fragment.MainFragment"
+        android:label="MainFragment" />
+</navigation>
